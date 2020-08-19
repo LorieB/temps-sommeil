@@ -1,0 +1,31 @@
+
+.custom-control-label{
+    user-select: none;
+}
+
+#details { 
+    display: none ;
+}
+
+#details .card{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+
+
+#details .btn-danger{ 
+    background-color: #dc354533;
+    border-top-left-radius: 0;
+}
+#details .btn-warning{ 
+    background-color: #ffc10733;
+    border-top-right-radius: 0;
+}
+#details .btn-danger:hover{ 
+    background-color: #dc354580;
+}
+#details .btn-warning:hover{ 
+    background-color: #ffc10780;
+}

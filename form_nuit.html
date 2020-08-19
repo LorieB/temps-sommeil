@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sommeil</title>
+
+    <link rel="stylesheet" href="lib/bootstrap-4.5.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" href="./icon/moon.svg">
+</head>
+
+<body class="container-fluid">
+    <header id="menu"></header>
+
+
+
+    <form enctype="multipart/form-data" method="POST" action="controller.php" class="col-lg-8 offset-lg-2 mt-4">
+        
+        <select id="utilisateur" name="utilisateur" class="form-control" required>
+            <option selected disabled  hidden></option>
+        </select>
+
+        <fieldset id="heuresSommeil" class="mb-4">
+            <legend>Heures</legend>
+
+            <div class="row mb-2">
+
+                <div class="col-md-4 mb-2 px-1 groupHeure">
+                    <div class="border rounded p-2">
+                        <button type="button" class="supprSommeil close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="form-group">
+                            <label for="endormissement">Endormissement</label>
+                            <div class="form-inline" id="endormissement">
+                                <input name="dateEndormissement[]" type="date" max="2020-08-03"
+                                    class="dateEndormissement form-control" required>
+                                <input name="heureEndormissement[]" type="time"
+                                    class="heureEndormissement form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reveil">Réveil</label>
+                            <div class="form-inline" id="reveil">
+                                <input name="dateReveil[]" type="date" class="dateReveil form-control" required>
+                                <input name="heureReveil[]" type="time" class="heureReveil form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button id="btnPlusSommeil" type="button" class="btn btn-outline-primary btn-block ">+</button>
+        </fieldset>
+
+        <fieldset class="mb-4">
+            <legend>Qualité</legend>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="microsReveil" name="microsReveil" value="1">
+                <label class="custom-control-label" for="microsReveil">Micros-réveils</label>
+            </div>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="cauchemard" name="cauchemard" value="1">
+                <label class="custom-control-label" for="cauchemard">Cauchemards</label>
+            </div>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="agitation" name="agitation" value="1">
+                <label class="custom-control-label" for="agitation">Agitation</label>
+            </div>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="paralysie" name="paralysie" value="1">
+                <label class="custom-control-label" for="paralysie">Paralysie</label>
+            </div>
+        </fieldset>
+
+        <label for="commentaire">Commentaire</label>
+        <textarea id="commentaire" name="commentaire" class="form-control mb-4"></textarea>
+
+        <button class="btn btn-primary btn-lg btn-block" name="formNuit">Valider</button>
+    </form>
+
+
+
+
+    <!-- Scripts -->
+
+    <script type="text/javascript" src="lib/jquery-3.5.1.min.js"></script>
+
+    <script type="text/javascript" src="lib/popper.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-4.5.1-dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="lib/moment.js"></script>
+    <script type="text/javascript" src="lib/moment-fr.min.js"></script>
+
+    <script type="text/javascript" src="form_nuit.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sommeil</title>
+
+    <link rel="stylesheet" href="lib/bootstrap-4.5.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/Chart.min.css">
+    <link rel="stylesheet" href="lib/daterangepicker.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="./icon/moon.svg">
+</head>
+
+
+<body class="container-fluid">
+    <header id="menu"></header>
+
+    <div class="row mt-4">
+        <div class="col-xl-6">
+            <canvas id="myChart"></canvas>
+
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="icon-calendar"><img src="./icon/calendar.svg" alt=""></span>
+                </div>
+                <label class="sr-only" for="daterange">Date</label>
+                <input type="button" id="daterange" class="form-control text-center" aria-describedby="icon-calendar">
+            </div>
+        </div>
+
+
+        <div class="col-xl-6">
+            <div id="details">
+                <div class="card border-bottom-0 rounded-top">
+                    <!-- Fake détails -->
+
+                    <h5 class="card-header">
+                        <button type="button" class="close" id="hideDetail" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        lundi 01 janvier 2020
+                    </h5>
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5 class="card-title">Temps de sommeil : 08:30</h5>
+
+                                <ul class="list-group list-group-horizontal-md  flex-wrap mb-2">
+                                    <li class="list-group-item">micro réveils</li>
+                                    <li class="list-group-item">cauchemard</li>
+                                    <li class="list-group-item">agitation</li>
+                                    <li class="list-group-item">paralysie</li>
+                                </ul>
+
+                                <p class="card-text mt-4 mb-2">Quelques détails sur la nuit</p>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item text-center">23:30 <img src="./icon/arrow.svg"
+                                            alt="flèche">08:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FIN Fake détails -->
+                </div>
+
+                <div class="btn-group btn-group-lg btn-block" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#supprModal"><img src="./icon/trash.svg" alt="supprimer"></button>
+                    <button type="button" class="btn btn-warning modifNuit"><img src="./icon/pencil.svg" alt="modifier"></button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="supprModal" tabindex="-1" aria-labelledby="supprModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="supprModalLabel">Confirmation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Etes-vous sûr de vouloir supprimer ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-danger supprNuit" data-dismiss="modal">Supprimer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Scripts -->
+
+        <script type="text/javascript" src="lib/jquery-3.5.1.min.js"></script>
+
+        <script type="text/javascript" src="lib/popper.min.js"></script>
+        <script type="text/javascript" src="lib/bootstrap-4.5.1-dist/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="lib/moment.js"></script>
+        <script type="text/javascript" src="lib/moment-fr.min.js"></script>
+
+        <script type="text/javascript" src="lib/Chart.min.js"></script>
+
+        <script type="text/javascript" src="lib/daterangepicker.min.js"></script>
+
+        <script type="module" src="indexJS.js"></script>
+</body>
+
+</html>
